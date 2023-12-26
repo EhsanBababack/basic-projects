@@ -1,0 +1,6 @@
+ir\sadad\fileuploader\UploaderService.class
+ir\sadad\fileuploader\UploaderServiceImpl.class
+ir\sadad\fileuploader\FileUploaderApplication.class
+ir\sadad\fileuploader\UploaderController.class
+ir\sadad\fileuploader\PersonDto$PersonDtoBuilder.class
+ir\sadad\fileuploader\PersonDto.class
