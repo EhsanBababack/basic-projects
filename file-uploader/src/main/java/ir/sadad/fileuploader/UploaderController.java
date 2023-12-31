@@ -17,7 +17,7 @@ public class UploaderController {
     @ResponseBody
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public List<PersonDto> upload(@RequestParam("file") MultipartFile file) throws IOException {
-
+// "file" in @RequestParam is key in postman
         try {
             if (!file.isEmpty()) {
                 return uploaderService.uploader(file);
