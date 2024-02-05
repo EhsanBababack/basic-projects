@@ -1,0 +1,30 @@
+<configuration>
+    <property name="LOG_DIR" value="./logs"/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SIZE_TIME_OUTPUT_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/File.log</file>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/sizeTimeOutputlogFile.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!--Max Size of file to start Archive -->
+                <maxFileSize>10KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+
+            <!-- Days till log history to keep -->
+            <maxHistory>3</maxHistory>
+        </rollingPolicy>
+
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="SIZE_TIME_OUTPUT_FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
